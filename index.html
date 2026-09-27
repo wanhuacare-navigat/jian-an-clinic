@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#087f77">
-  <meta name="description" content="健安診所位於台北市萬華區，提供家庭醫學、慢性病照護、成人健檢與常見疾病診療。">
+  <meta name="description" content="健安診所位於台北市萬華區，提供家庭醫學、慢性病照護、成人健檢與自費流感疫苗接種。">
   <title>健安診所｜健康安心好厝邊</title>
   
   <style>
@@ -98,17 +98,28 @@
 
     /* Latest News Section (最新消息) */
     .news-section { background: var(--bg-light); border-bottom: 1px solid var(--border); }
-    .news-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 850px; margin: 0 auto; }
-    .news-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); padding: 26px 30px; box-shadow: var(--shadow); position: relative; border-left: 5px solid #f59e0b; }
-    .news-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.85rem; }
-    .news-tag { background: #fef3c7; color: #b45309; padding: 3px 10px; border-radius: 20px; font-weight: 700; }
-    .news-date { color: var(--text-muted); }
-    .news-card h3 { font-size: 1.35rem; color: #92400e; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-    .news-content { font-size: 1rem; color: #4b5563; line-height: 1.7; }
-    .news-list { list-style: none; margin: 12px 0 16px; background: #fffbeb; padding: 14px 18px; border-radius: 8px; border: 1px dashed #fde68a; }
-    .news-list li { margin-bottom: 6px; color: #78350f; font-size: 0.95rem; }
+    .news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1050px; margin: 0 auto; }
+    .news-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); padding: 26px 28px; box-shadow: var(--shadow); position: relative; display: flex; flex-direction: column; }
+    .news-card.border-orange { border-left: 5px solid #f59e0b; }
+    .news-card.border-teal { border-left: 5px solid var(--primary); }
+    .news-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 0.85rem; }
+    .news-tag { padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.78rem; }
+    .tag-orange { background: #fef3c7; color: #b45309; }
+    .tag-teal { background: var(--primary-light); color: var(--primary-dark); }
+    .news-date { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+    .news-card h3 { font-size: 1.25rem; margin-bottom: 12px; line-height: 1.35; }
+    .news-card.border-orange h3 { color: #92400e; }
+    .news-card.border-teal h3 { color: var(--primary-dark); }
+    .news-content { font-size: 0.95rem; color: #4b5563; line-height: 1.7; flex-grow: 1; }
+    .news-list { list-style: none; margin: 12px 0; background: #fffbeb; padding: 14px 16px; border-radius: 8px; border: 1px dashed #fde68a; }
+    .news-list li { margin-bottom: 6px; color: #78350f; font-size: 0.92rem; }
     .news-list li:last-child { margin-bottom: 0; }
-    .news-footer-note { font-size: 0.9rem; color: #6b7280; font-weight: 500; }
+    .news-vaccine-box { background: var(--primary-light); padding: 14px 16px; border-radius: 8px; margin: 12px 0; border: 1px dashed #99f6e4; }
+    .news-vaccine-item { margin-bottom: 10px; }
+    .news-vaccine-item:last-child { margin-bottom: 0; }
+    .news-vaccine-item strong { color: var(--primary-dark); display: block; font-size: 0.95rem; }
+    .news-vaccine-item p { font-size: 0.85rem; color: #0f766e; margin-top: 2px; }
+    .news-footer-note { font-size: 0.85rem; color: #6b7280; margin-top: 8px; }
 
     /* Hours Section */
     .hours-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; }
@@ -179,7 +190,7 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .hero-layout, .hours-layout, .team-layout, .contact-layout { grid-template-columns: 1fr; }
+      .hero-layout, .hours-layout, .team-layout, .contact-layout, .news-grid { grid-template-columns: 1fr; }
       .quick-grid, .service-grid { grid-template-columns: repeat(2, 1fr); }
       .split-heading { flex-direction: column; align-items: flex-start; gap: 8px; }
       .primary-nav, .header-call { display: none; }
@@ -201,9 +212,9 @@
   <!-- 頂部公告橫幅 -->
   <aside class="announcement-banner" aria-label="診所公告">
     <div class="container announcement-inner">
-      <span class="announcement-badge">門診快訊</span>
-      <span><strong>【九月份營業時間調整公告📣】</strong> 週一二至 21:00｜週三、週末至 17:30｜週四五至 20:00</span>
-      <a href="#news" style="text-decoration: underline; font-weight: 600; color: #b45309; margin-left: 4px;">查看詳情 →</a>
+      <span class="announcement-badge">重要公告</span>
+      <span>自費流感疫苗已到貨開放施打｜九月份門診時間微調中</span>
+      <a href="#news" style="text-decoration: underline; font-weight: 600; color: #b45309; margin-left: 4px;">查看最新消息 →</a>
     </div>
   </aside>
 
@@ -279,13 +290,13 @@
           <b>›</b>
         </a>
         <a href="#news" class="quick-item">
-          <span class="quick-icon">📢</span>
-          <span><strong>最新消息</strong><small>九月份營業調整</small></span>
+          <span class="quick-icon">💉</span>
+          <span><strong>最新消息</strong><small>自費流感疫苗已開打</small></span>
           <b>›</b>
         </a>
         <a href="#hours" class="quick-item">
           <span class="quick-icon">◷</span>
-          <span><strong>門診時間</strong><small>上午・下午・晚間</small></span>
+          <span><strong>門診時間</strong><small>九月份營業時段</small></span>
           <b>›</b>
         </a>
         <a href="https://line.me/R/ti/p/@312rrags" target="_blank" rel="noopener" class="quick-item">
@@ -302,25 +313,50 @@
         <div class="section-heading centered-heading">
           <p class="section-kicker">LATEST NEWS</p>
           <h2 id="news-title">最新消息公告</h2>
-          <p>掌握健安診所最新門診變更、疫苗與健康照護資訊。</p>
+          <p>掌握健安診所門診時段、疫苗預防與最新健康衛教快訊。</p>
         </div>
 
         <div class="news-grid">
-          <!-- 公告卡片 -->
-          <article class="news-card">
+          <!-- 消息一：流感疫苗 -->
+          <article class="news-card border-teal">
             <div class="news-meta">
-              <span class="news-tag">門診公告</span>
-              <span class="news-date">九月起生效</span>
+              <span class="news-tag tag-teal">疫苗施打</span>
+              <span class="news-date">現正開放預約施打</span>
+            </div>
+            <h3>自費流感疫苗現正開放施打 💉</h3>
+            <div class="news-content">
+              <p>守護自己與家人的呼吸道健康，及早接種產生抗體保護力！本院目前提供以下優質自費流感疫苗選擇：</p>
+              
+              <div class="news-vaccine-box">
+                <div class="news-vaccine-item">
+                  <strong>• GSK Fluarix Trivalent 伏流感疫苗</strong>
+                  <p>國際知名藥廠葛蘭素史克研發，製程嚴謹、品質穩定，適合全家大小日常防護。</p>
+                </div>
+                <div class="news-vaccine-item">
+                  <strong>• 東洋佐劑流感疫苗（加強型）</strong>
+                  <p>添加專利佐劑能激發更強抗體效價、延長保護期，特別推薦 65 歲以上銀髮長者與免疫力較弱族群。</p>
+                </div>
+              </div>
+
+              <p class="news-footer-note">※ 疫苗數量有限，建議先來電確認庫存或至櫃檯洽詢預約。</p>
+            </div>
+          </article>
+
+          <!-- 消息二：九月份營業時間 -->
+          <article class="news-card border-orange">
+            <div class="news-meta">
+              <span class="news-tag tag-orange">營業時間調整</span>
+              <span class="news-date">公告日期：2026/09/02</span>
             </div>
             <h3>九月份營業時間調整公告 📣</h3>
             <div class="news-content">
-              <p>九月份營業時間更動如下：</p>
+              <p>九月份營業時間更動如下，敬請諒解謝謝🙏</p>
               <ul class="news-list">
                 <li>• <strong>每週一、二</strong>：營業時間至晚上 <strong>21:00</strong></li>
-                <li>• <strong>每週三、週末及國定假日</strong>：營業時間至下午 <strong>17:30</strong></li>
+                <li>• <strong>每週三、週末及國定假日</strong>：營業時間至下午 <strong>17:30</strong>（晚間休診）</li>
                 <li>• <strong>每週四、五</strong>：營業時間至晚上 <strong>20:00</strong></li>
               </ul>
-              <p class="news-footer-note">敬請諒解，謝謝大家的配合與支持！🙏</p>
+              <p class="news-footer-note">如需看診請留意門診結束時間，建議提早前往或來電詢問。</p>
             </div>
           </article>
         </div>
@@ -377,7 +413,7 @@
             <ul>
               <li>初診請攜帶健保卡與身分證件。</li>
               <li>慢性病回診請攜帶用藥或藥袋。</li>
-              <li>實際看診進度依現場狀況為準。</li>
+              <li>流感疫苗施打請先至櫃檯確認疫苗存量。</li>
             </ul>
             <a href="tel:0223012255">不確定是否有門診？直接打電話詢問</a>
           </aside>
@@ -417,7 +453,7 @@
             <span class="service-number">04</span>
             <div class="service-symbol">＋</div>
             <h3>疫苗與健康諮詢</h3>
-            <p>常見疫苗諮詢與施打。疫苗供應及資格請先來電確認。</p>
+            <p>自費流感疫苗、長者加強型疫苗與各類常規疫苗諮詢施打。</p>
           </article>
         </div>
         <div class="service-help">
@@ -472,7 +508,7 @@
         <div class="section-heading centered-heading">
           <p class="section-kicker">CONTACT &amp; LOCATION</p>
           <h2 id="contact-title">聯絡與交通</h2>
-          <p>有任何看診問題，歡迎直接來電或使用 LINE 聯絡。</p>
+          <p>有任何看診或疫苗問題，歡迎直接來電或使用 LINE 聯絡。</p>
         </div>
         <div class="contact-layout">
           <div class="map-card">
