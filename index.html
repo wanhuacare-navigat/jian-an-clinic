@@ -98,28 +98,33 @@
 
     /* Latest News Section (最新消息) */
     .news-section { background: var(--bg-light); border-bottom: 1px solid var(--border); }
-    .news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1050px; margin: 0 auto; }
-    .news-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); padding: 26px 28px; box-shadow: var(--shadow); position: relative; display: flex; flex-direction: column; }
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .news-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); padding: 22px 22px; box-shadow: var(--shadow); position: relative; display: flex; flex-direction: column; }
     .news-card.border-orange { border-left: 5px solid #f59e0b; }
     .news-card.border-teal { border-left: 5px solid var(--primary); }
-    .news-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-size: 0.85rem; }
-    .news-tag { padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.78rem; }
+    .news-card.border-gray { border-left: 5px solid #a0aec0; }
+    .news-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; font-size: 0.82rem; }
+    .news-tag { padding: 3px 8px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; }
     .tag-orange { background: #fef3c7; color: #b45309; }
     .tag-teal { background: var(--primary-light); color: var(--primary-dark); }
-    .news-date { color: var(--text-muted); font-variant-numeric: tabular-nums; font-size: 0.85rem; font-weight: 500; }
-    .news-card h3 { font-size: 1.25rem; margin-bottom: 12px; line-height: 1.35; }
+    .tag-gray { background: #edf2f7; color: #4a5568; }
+    .news-date { color: var(--text-muted); font-variant-numeric: tabular-nums; font-size: 0.82rem; font-weight: 500; }
+    .news-card h3 { font-size: 1.15rem; margin-bottom: 10px; line-height: 1.35; }
     .news-card.border-orange h3 { color: #92400e; }
     .news-card.border-teal h3 { color: var(--primary-dark); }
-    .news-content { font-size: 0.95rem; color: #4b5563; line-height: 1.7; flex-grow: 1; }
-    .news-list { list-style: none; margin: 12px 0; background: #fffbeb; padding: 14px 16px; border-radius: 8px; border: 1px dashed #fde68a; }
-    .news-list li { margin-bottom: 6px; color: #78350f; font-size: 0.92rem; }
+    .news-card.border-gray h3 { color: #4a5568; }
+    .news-content { font-size: 0.9rem; color: #4b5563; line-height: 1.65; flex-grow: 1; }
+    .news-list { list-style: none; margin: 10px 0; background: #fffbeb; padding: 12px 14px; border-radius: 8px; border: 1px dashed #fde68a; }
+    .news-list li { margin-bottom: 5px; color: #78350f; font-size: 0.88rem; }
     .news-list li:last-child { margin-bottom: 0; }
-    .news-vaccine-box { background: var(--primary-light); padding: 14px 16px; border-radius: 8px; margin: 12px 0; border: 1px dashed #99f6e4; }
-    .news-vaccine-item { margin-bottom: 10px; }
+    .news-list-gray { background: #f7fafc; border: 1px dashed #cbd5e0; }
+    .news-list-gray li { color: #4a5568; }
+    .news-vaccine-box { background: var(--primary-light); padding: 12px 14px; border-radius: 8px; margin: 10px 0; border: 1px dashed #99f6e4; }
+    .news-vaccine-item { margin-bottom: 8px; }
     .news-vaccine-item:last-child { margin-bottom: 0; }
-    .news-vaccine-item strong { color: var(--primary-dark); display: block; font-size: 0.95rem; }
-    .news-vaccine-item p { font-size: 0.85rem; color: #0f766e; margin-top: 2px; }
-    .news-footer-note { font-size: 0.85rem; color: #6b7280; margin-top: 8px; }
+    .news-vaccine-item strong { color: var(--primary-dark); display: block; font-size: 0.9rem; }
+    .news-vaccine-item p { font-size: 0.82rem; color: #0f766e; margin-top: 2px; }
+    .news-footer-note { font-size: 0.82rem; color: #6b7280; margin-top: 6px; }
 
     /* Hours Section */
     .hours-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; }
@@ -189,6 +194,9 @@
     .mobile-dock a span { font-size: 1.2rem; margin-bottom: 2px; }
 
     /* Responsive */
+    @media (max-width: 1024px) {
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 900px) {
       .hero-layout, .hours-layout, .team-layout, .contact-layout, .news-grid { grid-template-columns: 1fr; }
       .quick-grid, .service-grid { grid-template-columns: repeat(2, 1fr); }
@@ -202,7 +210,7 @@
     @media (max-width: 480px) {
       .quick-grid, .service-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 1.8rem; }
-      .news-card { padding: 20px; }
+      .news-card { padding: 18px; }
     }
   </style>
 </head>
@@ -213,7 +221,7 @@
   <aside class="announcement-banner" aria-label="診所公告">
     <div class="container announcement-inner">
       <span class="announcement-badge">重要公告</span>
-      <span>自費流感疫苗已到貨開放施打｜九月份門診時間微調中</span>
+      <span>十月份營業時間調整公告已發布｜自費流感疫苗現正施打中</span>
       <a href="#news" style="text-decoration: underline; font-weight: 600; color: #b45309; margin-left: 4px;">查看最新消息 →</a>
     </div>
   </aside>
@@ -290,13 +298,13 @@
           <b>›</b>
         </a>
         <a href="#news" class="quick-item">
-          <span class="quick-icon">💉</span>
-          <span><strong>最新消息</strong><small>流感疫苗／時間調整</small></span>
+          <span class="quick-icon">📢</span>
+          <span><strong>最新消息</strong><small>十月調整／疫苗施打</small></span>
           <b>›</b>
         </a>
         <a href="#hours" class="quick-item">
           <span class="quick-icon">◷</span>
-          <span><strong>門診時間</strong><small>九月份營業時段</small></span>
+          <span><strong>門診時間</strong><small>門診營運時段</small></span>
           <b>›</b>
         </a>
         <a href="https://line.me/R/ti/p/@312rrags" target="_blank" rel="noopener" class="quick-item">
@@ -307,7 +315,7 @@
       </div>
     </section>
 
-    <!-- 最新消息專區 (Latest News Section) -->
+    <!-- 最新消息專區 (Latest News Section: 3 格欄位) -->
     <section class="section news-section" id="news" aria-labelledby="news-title">
       <div class="container">
         <div class="section-heading centered-heading">
@@ -317,7 +325,25 @@
         </div>
 
         <div class="news-grid">
-          <!-- 消息一：流感疫苗 -->
+          <!-- 消息一：十月份營業時間調整 (最新置頂) -->
+          <article class="news-card border-orange">
+            <div class="news-meta">
+              <span class="news-tag tag-orange">最新公告</span>
+              <span class="news-date">📅 公告日期：2026/09/28</span>
+            </div>
+            <h3>十月份營業時間調整公告 📣</h3>
+            <div class="news-content">
+              <p>十月份營業時間更動如下，敬請諒解謝謝🙏</p>
+              <ul class="news-list">
+                <li>• <strong>每週一、二</strong>：營業至晚上 <strong>21:00</strong></li>
+                <li>• <strong>每週三、週末</strong>：營業至下午 <strong>17:30</strong></li>
+                <li>• <strong>每週四、五</strong>：營業至晚上 <strong>20:00</strong></li>
+              </ul>
+              <p class="news-footer-note">如需看診請留意門診結束時間，建議提早前往或來電確認。</p>
+            </div>
+          </article>
+
+          <!-- 消息二：流感疫苗施打 -->
           <article class="news-card border-teal">
             <div class="news-meta">
               <span class="news-tag tag-teal">疫苗施打</span>
@@ -325,38 +351,38 @@
             </div>
             <h3>自費流感疫苗現正開放施打 💉</h3>
             <div class="news-content">
-              <p>守護自己與家人的呼吸道健康，及早接種產生抗體保護力！本院目前提供以下優質自費流感疫苗選擇：</p>
+              <p>及早接種流感疫苗，形成完善呼吸道保護力！本院提供以下疫苗：</p>
               
               <div class="news-vaccine-box">
                 <div class="news-vaccine-item">
                   <strong>• GSK Fluarix Trivalent 伏流感疫苗</strong>
-                  <p>國際知名藥廠葛蘭素史克研發，製程嚴謹、品質穩定，適合全家大小日常防護。</p>
+                  <p>原廠進口、品質穩定，適合全家日常防護。</p>
                 </div>
                 <div class="news-vaccine-item">
                   <strong>• 東洋佐劑流感疫苗（加強型）</strong>
-                  <p>添加專利佐劑能激發更強抗體效價、延長保護期，特別推薦 65 歲以上銀髮長者與慢性病族群。</p>
+                  <p>專利佐劑增強抗體效價，推薦銀髮長者與慢性病族群。</p>
                 </div>
               </div>
 
-              <p class="news-footer-note">※ 疫苗數量有限，建議先來電確認庫存或至櫃檯洽詢預約。</p>
+              <p class="news-footer-note">※ 疫苗數量有限，建議先來電確認或至現場洽詢。</p>
             </div>
           </article>
 
-          <!-- 消息二：九月份營業時間 -->
-          <article class="news-card border-orange">
+          <!-- 消息三：九月份營業時間調整 (存檔公告) -->
+          <article class="news-card border-gray">
             <div class="news-meta">
-              <span class="news-tag tag-orange">營業時間調整</span>
+              <span class="news-tag tag-gray">前期公告</span>
               <span class="news-date">📅 公告日期：2026/09/02</span>
             </div>
             <h3>九月份營業時間調整公告 📣</h3>
             <div class="news-content">
-              <p>九月份營業時間更動如下，敬請諒解謝謝🙏</p>
-              <ul class="news-list">
-                <li>• <strong>每週一、二</strong>：營業時間至晚上 <strong>21:00</strong></li>
-                <li>• <strong>每週三、週末及國定假日</strong>：營業時間至下午 <strong>17:30</strong>（晚間休診）</li>
-                <li>• <strong>每週四、五</strong>：營業時間至晚上 <strong>20:00</strong></li>
+              <p>九月份營業時間調整存檔紀錄：</p>
+              <ul class="news-list news-list-gray">
+                <li>• <strong>每週一、二</strong>：營業至晚上 <strong>21:00</strong></li>
+                <li>• <strong>每週三、週末及國定假日</strong>：至下午 <strong>17:30</strong></li>
+                <li>• <strong>每週四、五</strong>：營業至晚上 <strong>20:00</strong></li>
               </ul>
-              <p class="news-footer-note">如需看診請留意門診結束時間，建議提早前往或來電詢問。</p>
+              <p class="news-footer-note">九月份排班已執行完畢，最新時段請參閱十月份公告。</p>
             </div>
           </article>
         </div>
@@ -400,7 +426,7 @@
                   <td>17:30<br>－<strong>20:00</strong></td>
                 </tr>
                 <tr>
-                  <th scope="row">週末（六、日）及國定假日</th>
+                  <th scope="row">每週六、每週日</th>
                   <td>08:30<br>－12:00</td>
                   <td>14:00<br>－17:30</td>
                   <td class="closed">休診</td>
